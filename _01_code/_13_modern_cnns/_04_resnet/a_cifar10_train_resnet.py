@@ -5,7 +5,7 @@ import os
 import wandb
 from pathlib import Path
 
-BASE_PATH = str(Path(__file__).resolve().parent.parent.parent.parent) # BASE_PATH: /Users/yhhan/git/link_dl
+BASE_PATH = str(Path(__file__).resolve().parent.parent.parent.parent)
 import sys
 sys.path.append(BASE_PATH)
 
@@ -17,9 +17,9 @@ if not os.path.isdir(CHECKPOINT_FILE_PATH):
 import sys
 sys.path.append(BASE_PATH)
 
-from _01_code._06_fcn_best_practice.c_trainer import ClassificationTrainer
-from _01_code._06_fcn_best_practice.h_cifar10_train_fcn import get_cifar10_data
-from _01_code._09_modern_cnns.a_arg_parser import get_parser
+from _01_code._08_fcn_best_practice.c_trainer import ClassificationTrainer
+from _01_code._08_fcn_best_practice.h_cifar10_train_fcn import get_cifar10_data
+from _01_code._13_modern_cnns.a_arg_parser import get_parser
 
 
 def get_resnet_model():
@@ -57,9 +57,9 @@ def get_resnet_model():
         )
       )
 
-      for i, b in enumerate(arch):
+      for i, (num_residuals, num_channels) in enumerate(arch):
         self.model.add_module(
-          name=f'b{i + 2}', module=self.block(*b, first_block=(i == 0))
+          name=f'block_{i}', module=self.block(num_residuals, num_channels, first_block=(i == 0))
         )
 
       self.model.add_module(
