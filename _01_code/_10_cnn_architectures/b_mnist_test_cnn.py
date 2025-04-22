@@ -5,16 +5,16 @@ import os
 from matplotlib import pyplot as plt
 from pathlib import Path
 
-BASE_PATH = str(Path(__file__).resolve().parent.parent.parent)  # BASE_PATH: /Users/yhhan/git/link_dl
+BASE_PATH = str(Path(__file__).resolve().parent.parent.parent)
 CURRENT_FILE_PATH = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_FILE_PATH = os.path.join(CURRENT_FILE_PATH, "checkpoints")
 
 import sys
 sys.path.append(BASE_PATH)
 
-from _01_code._07_cnn.a_mnist_train_cnn import get_cnn_model
-from _01_code._06_fcn_best_practice.d_tester import ClassificationTester
-from _01_code._06_fcn_best_practice.g_mnist_test_fcn import get_mnist_test_data
+from _01_code._10_cnn_architectures.a_mnist_train_cnn import get_cnn_model
+from _01_code._08_fcn_best_practice.d_tester import ClassificationTester
+from _01_code._08_fcn_best_practice.g_mnist_test_fcn import get_mnist_test_data
 
 
 def main():

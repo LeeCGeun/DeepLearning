@@ -9,15 +9,15 @@ def get_parser():
   )
 
   parser.add_argument(
-    "-b", "--batch_size", type=int, default=2_048, help="Batch size (int, default: 2_048)"
+    "-b", "--batch_size", type=int, default=256, help="Batch size (int, default: 2_048)"
   )
 
   parser.add_argument(
-    "-e", "--epochs", type=int, default=10_000, help="Number of training epochs (int, default:10_000)"
+    "-e", "--epochs", type=int, default=100, help="Number of training epochs (int, default:10_000)"
   )
 
   parser.add_argument(
-    "-r", "--learning_rate", type=float, default=1e-3, help="Learning rate (float, default: 1e-3)"
+    "-r", "--learning_rate", type=float, default=1e-2, help="Learning rate (float, default: 1e-3)"
   )
 
   parser.add_argument(

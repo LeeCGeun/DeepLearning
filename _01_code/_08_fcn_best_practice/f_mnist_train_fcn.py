@@ -7,7 +7,7 @@ import os
 import wandb
 from pathlib import Path
 
-BASE_PATH = str(Path(__file__).resolve().parent.parent.parent) # BASE_PATH: /Users/yhhan/git/link_dl
+BASE_PATH = str(Path(__file__).resolve().parent.parent.parent)
 import sys
 sys.path.append(BASE_PATH)
 
@@ -17,8 +17,8 @@ if not os.path.isdir(CHECKPOINT_FILE_PATH):
   os.makedirs(os.path.join(CURRENT_FILE_PATH, "checkpoints"))
 
 from _01_code._99_common_utils.utils import is_linux, is_windows, get_num_cpu_cores
-from _01_code._06_fcn_best_practice.c_trainer import ClassificationTrainer
-from _01_code._06_fcn_best_practice.e_arg_parser import get_parser
+from _01_code._08_fcn_best_practice.c_trainer import ClassificationTrainer
+from _01_code._08_fcn_best_practice.e_arg_parser import get_parser
 
 
 def get_mnist_data(flatten=False):

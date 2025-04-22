@@ -11,7 +11,7 @@ import time
 import os
 from pathlib import Path
 
-BASE_PATH = str(Path(__file__).resolve().parent.parent.parent)  # BASE_PATH: /Users/yhhan/git/link_dl
+BASE_PATH = str(Path(__file__).resolve().parent.parent.parent) 
 import sys
 sys.path.append(BASE_PATH)
 
